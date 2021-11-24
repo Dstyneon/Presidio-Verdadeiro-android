@@ -12,9 +12,7 @@
         <activity
             android:name=".Cadastrofunc"
             android:exported="false" />
-        <activity
-            android:name=".Cadastrologin"
-            android:exported="false" />
+        -
         <activity
             android:name=".Tela_principal"
             android:exported="false" />
