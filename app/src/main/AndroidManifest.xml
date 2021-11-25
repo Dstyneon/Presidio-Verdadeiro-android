@@ -10,9 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PresidioVerdadeiro">
         <activity
+            android:name=".Preso"
+            android:exported="false" />
+        <activity
             android:name=".Cadastrofunc"
             android:exported="false" />
-        -
         <activity
             android:name=".Tela_principal"
             android:exported="false" />
