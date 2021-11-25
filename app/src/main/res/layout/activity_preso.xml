@@ -7,6 +7,7 @@
     android:background="@drawable/plano_de_fundo"
     tools:context=".MainActivity" >
 
+
     <TextView
         android:id="@+id/signind"
         android:layout_width="match_parent"
@@ -22,7 +23,6 @@
         android:textColor="@color/white"
         android:textSize="25dp"
         android:textStyle="normal" />
-
 
     <EditText
         android:id="@+id/NomeD"
@@ -85,10 +85,10 @@
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
         android:background="#50ffffff"
-        android:drawableLeft="@drawable/ic_baseline_alternate_email_24"
         android:drawablePadding="10dp"
+        android:gravity="left"
         android:hint="Ficha Criminal"
-        android:padding="20dp"
+        android:padding="10dp"
 
         android:textColor="@color/white"
         android:textColorHint="@color/white" />
