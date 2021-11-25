@@ -30,7 +30,7 @@ public class Cadastrofunc extends AppCompatActivity {
         btncadastro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(Usuárioc.getText().toString().equals("") || passwordc.getText().equals("") || passwordconfirm.getText().equals("") || Email.getText().toString().equals("") ||  idpolicial.getText().toString().equals("") )
+                if(Usuárioc.getText().toString().equals("") || passwordc.getText().toString().equals("") || passwordconfirm.getText().toString().equals("") || Email.getText().toString().equals("") ||  idpolicial.getText().toString().equals("") )
                 {
                     Toast.makeText(Cadastrofunc.this, "Porfavor Preencha todos as caixas de texto!!!",Toast.LENGTH_SHORT).show();
                 }

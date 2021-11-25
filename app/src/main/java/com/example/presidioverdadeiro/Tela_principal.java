@@ -30,7 +30,8 @@ public class Tela_principal extends AppCompatActivity {
             public void onClick(View v) {
 
                 Toast.makeText(Tela_principal.this, "Redirecionando", Toast.LENGTH_SHORT).show();
-
+                OpenLoginScreen();
+                        //está só de teste mudar depois 1 pra cada e 1 função pra cada
 
             }
 
@@ -82,7 +83,7 @@ public class Tela_principal extends AppCompatActivity {
     }
 
     public void OpenLoginScreen() {
-        Intent intent = new Intent(this,MainActivity.class);
+        Intent intent = new Intent(this,Preso.class);
         startActivity(intent);
     }
 

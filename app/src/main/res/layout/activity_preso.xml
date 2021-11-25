@@ -7,7 +7,6 @@
     android:background="@drawable/plano_de_fundo"
     tools:context=".MainActivity" >
 
-
     <TextView
         android:id="@+id/signind"
         android:layout_width="match_parent"
@@ -23,6 +22,7 @@
         android:textColor="@color/white"
         android:textSize="25dp"
         android:textStyle="normal" />
+
 
     <EditText
         android:id="@+id/NomeD"
@@ -42,18 +42,17 @@
         android:textColorHint="@color/white" />
 
     <EditText
-        android:id="@+id/idadeD"
-        android:layout_width="141dp"
+        android:id="@+id/DataNasD"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/NomeD"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="19dp"
+        android:layout_marginTop="22dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
         android:background="#50ffffff"
-        android:drawableLeft="@drawable/ic_baseline_lock_24"
         android:drawablePadding="10dp"
-        android:hint="Idade"
+        android:hint="Data Nascimento"
         android:padding="20dp"
         android:textColor="@color/white"
         android:textColorHint="@color/white" />
@@ -67,7 +66,6 @@
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
         android:background="#50ffffff"
-        android:drawableLeft="@drawable/ic_baseline_lock_24"
         android:drawablePadding="10dp"
         android:hint="Cpf do Detento"
         android:inputType="textPassword"
@@ -88,12 +86,12 @@
         android:drawablePadding="10dp"
         android:gravity="left"
         android:hint="Ficha Criminal"
-        android:padding="10dp"
+        android:padding="18dp"
         android:textColor="@color/white"
         android:textColorHint="@color/white" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btncadastroD"
+        android:id="@+id/CadastroDt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/FichaC"
