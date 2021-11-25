@@ -89,7 +89,6 @@
         android:gravity="left"
         android:hint="Ficha Criminal"
         android:padding="10dp"
-
         android:textColor="@color/white"
         android:textColorHint="@color/white" />
 
