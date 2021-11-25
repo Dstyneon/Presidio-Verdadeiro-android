@@ -72,6 +72,7 @@ public class Cadastrofunc extends AppCompatActivity {
             }
         });
 
+
     }
 
     public void openHomescreen() {
