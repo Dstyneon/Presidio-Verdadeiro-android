@@ -18,7 +18,7 @@
         android:drawableLeft="@drawable/ic_baseline_local_police_24"
         android:drawableRight="@drawable/ic_baseline_local_police_24"
         android:gravity="center"
-        android:text="Cadastro"
+        android:text="Meus Dados"
         android:textColor="@color/white"
         android:textSize="25dp"
         android:textStyle="normal" />
@@ -113,7 +113,7 @@
         android:textColorHint="@color/white" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btncadastro"
+        android:id="@+id/btnvoltar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/Email"
@@ -123,7 +123,7 @@
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
         android:backgroundTint="@color/red"
-        android:text="Cadastrar" />
+        android:text="Voltar" />
 
 
 </RelativeLayout>
