@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PresidioVerdadeiro">
         <activity
+            android:name=".Pesquisa"
+            android:exported="false" />
+        <activity
+            android:name=".Meus_Dados"
+            android:exported="false" />
+        <activity
             android:name=".Preso"
             android:exported="false" />
         <activity

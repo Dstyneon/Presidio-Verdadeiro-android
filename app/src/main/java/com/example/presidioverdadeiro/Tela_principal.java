@@ -44,7 +44,7 @@ public class Tela_principal extends AppCompatActivity {
             public void onClick(View v) {
 
                 Toast.makeText(Tela_principal.this, "Redirecionando", Toast.LENGTH_SHORT).show();
-
+                OpenLoginScreen2();
 
             }
 
@@ -57,6 +57,7 @@ public class Tela_principal extends AppCompatActivity {
             public void onClick(View v) {
 
                 Toast.makeText(Tela_principal.this, "Redirecionando", Toast.LENGTH_SHORT).show();
+                OpenLoginScreen3();
 
 
             }
@@ -84,6 +85,14 @@ public class Tela_principal extends AppCompatActivity {
 
     public void OpenLoginScreen() {
         Intent intent = new Intent(this,Preso.class);
+        startActivity(intent);
+    }
+    public void OpenLoginScreen2() {
+        Intent intent = new Intent(this,Meus_Dados.class);
+        startActivity(intent);
+    }
+    public void OpenLoginScreen3() {
+        Intent intent = new Intent(this,Pesquisa.class);
         startActivity(intent);
     }
 

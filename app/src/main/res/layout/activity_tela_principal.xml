@@ -94,21 +94,20 @@
                 android:orientation="vertical">
 
 
-
                 <com.google.android.material.button.MaterialButton
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
                     android:id="@+id/cadastrarbtn"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
                     android:background="@drawable/ic_baseline_registro"
-                    android:backgroundTint="@color/black"/>
+                    android:backgroundTint="@color/black" />
 
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Cadastrar"
-                    android:textSize="16sp"
-                    android:textColor="@color/black"/>
+                    android:text="Meus Dados"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
 
 
 
