@@ -19,11 +19,13 @@ public class DBHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase DB) {
         DB.execSQL("create Table Usuarios(id_policial TEXT NOT NULL PRIMARY KEY, usuario TEXT NOT NULL, senha PASSWORD NOT NULL, email TEXT NOT NULL )");
+        DB.execSQL("create Table Presos(Cpf int NOT NULL PRIMARY KEY, nome TEXT NOT NULL, dtnasc DATE NOT NULL, Ficha TEXT NOT NULL)");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase DB, int oldVersion, int newVersion) {
         DB.execSQL("drop table if exists Usuarios");
+        DB.execSQL("drop table if exists Presos");
 
 
     }
@@ -50,7 +52,24 @@ public class DBHelper extends SQLiteOpenHelper {
 
     }
 
+    public Boolean insertpresodata(String nome, String dtnasc, String Cpf, String Ficha) {
+
+        SQLiteDatabase DB = this.getWritableDatabase();
+
+        ContentValues contentValues = new ContentValues();
+
+        contentValues.put("nome", nome);
+        contentValues.put("dtnasc", dtnasc);
+        contentValues.put("Cpf", Cpf);
+        contentValues.put("Ficha", Ficha);
+
+        long result = DB.insert("Presos", null, contentValues);
+        if (result == -1) {
+            return false;
+        } else {
+            return true;
+        }
 
 
-
+    }
 }
