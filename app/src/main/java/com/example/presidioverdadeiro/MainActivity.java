@@ -73,7 +73,6 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
     public void AbrirHomeScreen() {
         Intent intent = new Intent(this,Tela_principal.class);
         startActivity(intent);

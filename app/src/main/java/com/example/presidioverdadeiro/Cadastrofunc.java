@@ -38,13 +38,10 @@ public class Cadastrofunc extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if(passwordc.getText().equals("") || passwordconfirm.getText().equals("") || Email.getText().toString().equals("") ||  idpolicial.getText().toString().equals("") )
-                {
-                    Toast.makeText(Cadastrofunc.this, "Por favor Preencha todos as caixas de texto!!!",Toast.LENGTH_SHORT).show();
-                }
-
-                else{
-                    if(passwordc.getText().toString().equals(passwordconfirm.getText().toString()) ){ //Se as senhas forem iguais
+                if (passwordc.getText().equals("") || passwordconfirm.getText().equals("") || Email.getText().toString().equals("") || idpolicial.getText().toString().equals("")) {
+                    Toast.makeText(Cadastrofunc.this, "Por favor Preencha todos as caixas de texto!!!", Toast.LENGTH_SHORT).show();
+                } else {
+                    if (passwordc.getText().toString().equals(passwordconfirm.getText().toString())) { //Se as senhas forem iguais
 
                         String id_policial = idpolicial.getText().toString();
                         String senha = passwordc.getText().toString();
@@ -52,23 +49,19 @@ public class Cadastrofunc extends AppCompatActivity {
 
                         Boolean checkid = DB.checkid(id_policial);
 
-                        if(checkid==false) //Se o usuário ainda não existir
+                        if (checkid == false) //Se o usuário ainda não existir
                         {
-                          Boolean insetuserdata = DB.insetuserdata(id_policial,senha,email); //insere dados na tabela de usuarios
+                            Boolean insetuserdata = DB.insetuserdata(id_policial, senha, email); //insere dados na tabela de usuarios
 
-                            if (insetuserdata == true){ // se foi inserido sem erros
+                            if (insetuserdata == true) { // se foi inserido sem erros
 
                                 Toast.makeText(Cadastrofunc.this, "Cadastro realizado com sucesso!", Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
                                 startActivity(intent);
-                            }
-                            else
-                            {
+                            } else {
                                 Toast.makeText(Cadastrofunc.this, "Falha ao inserir dados, tente novamente", Toast.LENGTH_SHORT).show();
                             }
-                        }
-
-                        else{ //Se o usuário existir
+                        } else { //Se o usuário existir
 
                             Toast.makeText(Cadastrofunc.this, "O usuário já existe, vá para a tela de login", Toast.LENGTH_SHORT).show();
 
