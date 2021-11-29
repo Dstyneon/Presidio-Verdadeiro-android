@@ -56,7 +56,7 @@ public class Cadastrofunc extends AppCompatActivity {
                             if (insetuserdata == true) { // se foi inserido sem erros
 
                                 Toast.makeText(Cadastrofunc.this, "Cadastro realizado com sucesso!", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                                 startActivity(intent);
                             } else {
                                 Toast.makeText(Cadastrofunc.this, "Falha ao inserir dados, tente novamente", Toast.LENGTH_SHORT).show();
@@ -66,17 +66,9 @@ public class Cadastrofunc extends AppCompatActivity {
                             Toast.makeText(Cadastrofunc.this, "O usuário já existe, vá para a tela de login", Toast.LENGTH_SHORT).show();
 
                         }
-
-
-                    }
-                    else if (passwordc.getText().toString() != passwordconfirm.getText().toString()){ //Se as senhas não forem iguais
-                        Toast.makeText(Cadastrofunc.this, "As senhas precisam ser identicas!!!",Toast.LENGTH_SHORT).show();
                     }
                 }
             }
         });
-
-
     }
-
 }

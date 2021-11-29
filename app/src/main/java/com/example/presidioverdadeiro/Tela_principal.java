@@ -70,7 +70,7 @@ public class Tela_principal extends AppCompatActivity {
             public void onClick(View v) {
 
                 Toast.makeText(Tela_principal.this, "Saindo...", Toast.LENGTH_SHORT).show();
-                OpenLoginScreen();
+                OpenLoginScreen4();
 
 
             }
@@ -95,6 +95,9 @@ public class Tela_principal extends AppCompatActivity {
         Intent intent = new Intent(this,Pesquisa.class);
         startActivity(intent);
     }
-
+    public void OpenLoginScreen4() {
+        Intent intent = new Intent(this,MainActivity.class);
+        startActivity(intent);
+    }
 
     }
