@@ -38,34 +38,45 @@ public class Cadastrofunc extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if(Usuárioc.getText().toString().equals("") || passwordc.getText().equals("") || passwordconfirm.getText().equals("") || Email.getText().toString().equals("") ||  idpolicial.getText().toString().equals("") )
+                if(passwordc.getText().equals("") || passwordconfirm.getText().equals("") || Email.getText().toString().equals("") ||  idpolicial.getText().toString().equals("") )
                 {
-                    Toast.makeText(Cadastrofunc.this, "Porfavor Preencha todos as caixas de texto!!!",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Cadastrofunc.this, "Por favor Preencha todos as caixas de texto!!!",Toast.LENGTH_SHORT).show();
                 }
 
                 else{
-                    if(passwordc.getText().toString().equals(passwordconfirm.getText().toString()) ){
+                    if(passwordc.getText().toString().equals(passwordconfirm.getText().toString()) ){ //Se as senhas forem iguais
 
                         String id_policial = idpolicial.getText().toString();
-                        String usuario = Usuárioc.getText().toString();
                         String senha = passwordc.getText().toString();
                         String email = Email.getText().toString();
 
-                        Boolean checkinsertdata = DB.insetuserdata(id_policial,usuario,senha,email);
+                        Boolean checkid = DB.checkid(id_policial);
 
-                        if(checkinsertdata){
+                        if(checkid==false) //Se o usuário ainda não existir
+                        {
+                          Boolean insetuserdata = DB.insetuserdata(id_policial,senha,email); //insere dados na tabela de usuarios
 
-                            Toast.makeText(Cadastrofunc.this, "Cadastro realizado com sucesso!", Toast.LENGTH_SHORT).show();
-                            openHomescreen();
+                            if (insetuserdata == true){ // se foi inserido sem erros
+
+                                Toast.makeText(Cadastrofunc.this, "Cadastro realizado com sucesso!", Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                                startActivity(intent);
+                            }
+                            else
+                            {
+                                Toast.makeText(Cadastrofunc.this, "Falha ao inserir dados, tente novamente", Toast.LENGTH_SHORT).show();
+                            }
                         }
-                        else {
 
-                            Toast.makeText(Cadastrofunc.this, "Erro ao inserir dados!", Toast.LENGTH_SHORT).show();
+                        else{ //Se o usuário existir
+
+                            Toast.makeText(Cadastrofunc.this, "O usuário já existe, vá para a tela de login", Toast.LENGTH_SHORT).show();
+
                         }
 
 
                     }
-                    else if (passwordc.getText().toString() != passwordconfirm.getText().toString()){
+                    else if (passwordc.getText().toString() != passwordconfirm.getText().toString()){ //Se as senhas não forem iguais
                         Toast.makeText(Cadastrofunc.this, "As senhas precisam ser identicas!!!",Toast.LENGTH_SHORT).show();
                     }
                 }
@@ -75,8 +86,4 @@ public class Cadastrofunc extends AppCompatActivity {
 
     }
 
-    public void openHomescreen() {
-        Intent intent = new Intent(this,MainActivity.class);
-        startActivity(intent);
-    }
 }
