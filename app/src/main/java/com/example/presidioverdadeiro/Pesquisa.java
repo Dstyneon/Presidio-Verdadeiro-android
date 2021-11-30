@@ -5,12 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.material.button.MaterialButton;
 
-public class Pesquisa extends AppCompatActivity {
+import java.util.zip.DataFormatException;
 
+public class Pesquisa extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +27,19 @@ public class Pesquisa extends AppCompatActivity {
 
 
         });
+
+        EditText NomeD = (EditText) findViewById(R.id.NomeD);
+        NomeD.setText("pao de forma");
+
+        EditText datasnas = (EditText) findViewById(R.id.DataNasD);
+        datasnas.setText("pao de forma");
+
+        EditText CpfD = (EditText) findViewById(R.id.CpfD);
+        CpfD.setText("pao de forma");
+
+        EditText FichaC = (EditText) findViewById(R.id.FichaC);
+        FichaC.setText("pao de forma");
+
     }
     public void openHomescreen() {
         Intent intent = new Intent(this,Tela_principal.class);
