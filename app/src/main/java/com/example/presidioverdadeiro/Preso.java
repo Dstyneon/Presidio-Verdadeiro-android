@@ -47,10 +47,9 @@ public class Preso extends AppCompatActivity {
                 else {
 
 
+                    Boolean insertpresodata = DB.insertpresodata(nome,dtnasc,Cpf,Ficha);
 
-                    Boolean checkinsertdata = DB.insertpresodata(Cpf,nome,dtnasc,Ficha);
-
-                    if(checkinsertdata){
+                    if(insertpresodata){
                         Toast.makeText(Preso.this, "Cadastro realizado com sucesso!", Toast.LENGTH_SHORT).show();
                         openHomescreen();
                     }

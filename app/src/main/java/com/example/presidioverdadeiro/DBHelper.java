@@ -10,6 +10,8 @@ import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 
+import java.security.PublicKey;
+
 
 public class DBHelper extends SQLiteOpenHelper {
 
@@ -87,6 +89,16 @@ public class DBHelper extends SQLiteOpenHelper {
         }
 
     }
+
+     public Cursor retornadados(String Cpf){
+
+         SQLiteDatabase DB = this.getWritableDatabase();
+
+         Cursor cursor = DB.rawQuery("Select * from Presos where Cpf = ?", new String[] {Cpf} );
+
+         return cursor;
+
+     }
 
     public Boolean checksenha(String id, String senha){
 
