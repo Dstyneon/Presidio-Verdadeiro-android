@@ -100,6 +100,16 @@ public class DBHelper extends SQLiteOpenHelper {
 
      }
 
+    public Cursor retornausuario(String id_local){
+
+        SQLiteDatabase DB = this.getWritableDatabase();
+
+        Cursor cursor = DB.rawQuery("Select * from Usuarios where id = ?", new String[] {id_local} );
+
+        return cursor;
+
+    }
+
     public Boolean checksenha(String id, String senha){
 
         SQLiteDatabase DB = this.getWritableDatabase();

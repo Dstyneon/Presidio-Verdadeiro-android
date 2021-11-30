@@ -44,24 +44,32 @@ public class Pesquisa extends AppCompatActivity {
             public void onClick(View v) {
 
 
+
                 String Cpf_preso = Cpf.getText().toString();
 
-                Cursor dados = DB.retornadados(Cpf_preso);
+                if (Cpf_preso.equals("")){
 
-                dados.moveToFirst();
+                    Toast.makeText(Pesquisa.this, "O Campo CPF não pode ser vazio!", Toast.LENGTH_SHORT).show();
 
-                EditText NomeD = (EditText) findViewById(R.id.NomeD);
-                NomeD.setText(dados.getString(1));
+                }
+                else {
 
-                EditText datasnas = (EditText) findViewById(R.id.DataNasD);
-                datasnas.setText(dados.getString(2));
+                    Cursor dados = DB.retornadados(Cpf_preso);
 
-                EditText CpfD = (EditText) findViewById(R.id.CpfD);
-                CpfD.setText(dados.getString(0));
+                    dados.moveToFirst();
 
-                EditText FichaC = (EditText) findViewById(R.id.FichaC);
-                FichaC.setText(dados.getString(3));
+                    EditText NomeD = (EditText) findViewById(R.id.NomeD);
+                    NomeD.setText(dados.getString(1));
 
+                    EditText datasnas = (EditText) findViewById(R.id.DataNasD);
+                    datasnas.setText(dados.getString(2));
+
+                    EditText CpfD = (EditText) findViewById(R.id.CpfD);
+                    CpfD.setText(dados.getString(0));
+
+                    EditText FichaC = (EditText) findViewById(R.id.FichaC);
+                    FichaC.setText(dados.getString(3));
+                }
 
             }
         });

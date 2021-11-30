@@ -12,7 +12,7 @@ import com.google.android.material.button.MaterialButton;
 
 public class MainActivity extends AppCompatActivity {
 
-    DBHelper DB;
+    private DBHelper DB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

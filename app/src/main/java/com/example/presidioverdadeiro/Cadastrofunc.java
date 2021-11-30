@@ -19,7 +19,7 @@ public class Cadastrofunc extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastrofunc);
 
-        TextView Usuárioc = (TextView) findViewById(R.id.Usuárioc);
+
         TextView passwordc = (TextView) findViewById(R.id.passwordc);
         TextView passwordconfirm = (TextView) findViewById(R.id.passwordconfirm);
         TextView Email = (TextView) findViewById(R.id.Email);
