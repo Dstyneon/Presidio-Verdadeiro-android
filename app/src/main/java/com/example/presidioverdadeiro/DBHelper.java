@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.view.View;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -22,6 +23,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
         super(context, "Presidiodata.db",null,1);
     }
+
 
     @Override
     public void onCreate(SQLiteDatabase DB) {
@@ -100,11 +102,11 @@ public class DBHelper extends SQLiteOpenHelper {
 
      }
 
-    public Cursor retornausuario(String id_local){
+    public Cursor retornausuario(String id){
 
         SQLiteDatabase DB = this.getWritableDatabase();
 
-        Cursor cursor = DB.rawQuery("Select * from Usuarios where id = ?", new String[] {id_local} );
+        Cursor cursor = DB.rawQuery("Select * From Usuarios where id_policial = ?", new String[] {id} );
 
         return cursor;
 

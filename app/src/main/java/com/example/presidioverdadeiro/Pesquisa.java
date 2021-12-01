@@ -16,7 +16,7 @@ import java.util.zip.DataFormatException;
 
 public class Pesquisa extends AppCompatActivity {
 
-    private DBHelper DB;
+    private DBHelper DB = new DBHelper(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
