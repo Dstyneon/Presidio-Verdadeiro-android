@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
                     Boolean checksenha = DB.checksenha(id_policial, senha);
 
                     if (checksenha == true) { //se o usuario e/ou a senha existirem
-                        Toast.makeText(MainActivity.this, "Bem vindo(a)", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, "Bem vindo(a) " + id_policial, Toast.LENGTH_SHORT).show();
                         AbrirHomeScreen();
                     }
                     else { //se o usuario e/ou a senha não existirem

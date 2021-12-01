@@ -54,21 +54,31 @@ public class Pesquisa extends AppCompatActivity {
                 }
                 else {
 
-                    Cursor dados = DB.retornadados(Cpf_preso);
+                    Boolean checkcpf = DB.checkcpf(Cpf_preso);
 
-                    dados.moveToFirst();
+                    if (checkcpf == false) {
+                        Toast.makeText(Pesquisa.this, "Não existem registros para o CPF informado", Toast.LENGTH_SHORT).show();
+                    }
 
-                    EditText NomeD = (EditText) findViewById(R.id.NomeD);
-                    NomeD.setText(dados.getString(1));
+                    else {
 
-                    EditText datasnas = (EditText) findViewById(R.id.DataNasD);
-                    datasnas.setText(dados.getString(2));
+                        Cursor dados = DB.retornadados(Cpf_preso);
 
-                    EditText CpfD = (EditText) findViewById(R.id.CpfD);
-                    CpfD.setText(dados.getString(0));
+                        dados.moveToFirst();
 
-                    EditText FichaC = (EditText) findViewById(R.id.FichaC);
-                    FichaC.setText(dados.getString(3));
+                        EditText NomeD = (EditText) findViewById(R.id.NomeD);
+                        NomeD.setText(dados.getString(1));
+
+                        EditText datasnas = (EditText) findViewById(R.id.DataNasD);
+                        datasnas.setText(dados.getString(2));
+
+                        EditText CpfD = (EditText) findViewById(R.id.CpfD);
+                        CpfD.setText(dados.getString(0));
+
+                        EditText FichaC = (EditText) findViewById(R.id.FichaC);
+                        FichaC.setText(dados.getString(3));
+                    }
+
                 }
 
             }

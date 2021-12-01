@@ -46,16 +46,28 @@ public class Preso extends AppCompatActivity {
                 }
                 else {
 
+                    Boolean checkcpf = DB.checkcpf(Cpf);
 
-                    Boolean insertpresodata = DB.insertpresodata(nome,dtnasc,Cpf,Ficha);
+                    if(checkcpf){
 
-                    if(insertpresodata){
-                        Toast.makeText(Preso.this, "Cadastro realizado com sucesso!", Toast.LENGTH_SHORT).show();
-                        openHomescreen();
+                        Toast.makeText(Preso.this, "O CPF " + Cpf + " já está cadastrado! ", Toast.LENGTH_SHORT).show();
+
                     }
-                    else {
-                        Toast.makeText(Preso.this, "Falha ao inserir dados!", Toast.LENGTH_SHORT).show();
+
+                    else{
+
+                        Boolean insertpresodata = DB.insertpresodata(nome,dtnasc,Cpf,Ficha);
+
+                        if(insertpresodata){
+                            Toast.makeText(Preso.this, "Cadastro realizado com sucesso!", Toast.LENGTH_SHORT).show();
+                            openHomescreen();
+                        }
+                        else {
+                            Toast.makeText(Preso.this, "Falha ao inserir dados!", Toast.LENGTH_SHORT).show();
+                        }
+
                     }
+
 
                 }
 

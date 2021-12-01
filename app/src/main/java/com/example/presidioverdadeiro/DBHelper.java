@@ -92,6 +92,22 @@ public class DBHelper extends SQLiteOpenHelper {
 
     }
 
+    public Boolean checkcpf(String cpf_c) {
+
+        SQLiteDatabase DB = this.getWritableDatabase();
+
+        Cursor cursor = DB.rawQuery("Select * from Presos where Cpf = ?", new String[] {cpf_c} );
+
+        if(cursor.getCount() > 0){
+            return true;
+        }
+        else {
+            return false;
+        }
+
+    }
+
+
      public Cursor retornadados(String Cpf){
 
          SQLiteDatabase DB = this.getWritableDatabase();
@@ -126,6 +142,8 @@ public class DBHelper extends SQLiteOpenHelper {
         }
 
     }
+
+
 
 
 

@@ -11,11 +11,15 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="12dp"
         android:text="Minha Dashboard"
-        android:textSize="20sp"
-        android:textStyle="bold"
         android:textColor="@color/black"
-        android:layout_margin="12dp"/>
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
 
     <GridLayout
         android:layout_width="match_parent"
@@ -29,11 +33,11 @@
         <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="fill"
-            android:layout_columnWeight="1"
+            android:layout_row="0"
             android:layout_rowWeight="1"
             android:layout_column="0"
-            android:layout_row="0"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
             app:cardCornerRadius="8dp"
             app:cardElevation="8dp"
             app:cardUseCompatPadding="true">
@@ -55,20 +59,15 @@
                     tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
 
-
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Adicionar"
-                    android:textSize="16sp"
-                    android:textColor="@color/black"/>
-
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
 
 
             </LinearLayout>
-
-
 
 
         </androidx.cardview.widget.CardView>
@@ -214,7 +213,6 @@
 
 
     </GridLayout>
-
 
 
 </RelativeLayout>

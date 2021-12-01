@@ -2,9 +2,13 @@ package com.example.presidioverdadeiro;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.button.MaterialButton;
@@ -25,10 +29,15 @@ public class Tela_principal extends AppCompatActivity {
 
 
 
+        SharedPreferences sp = getApplicationContext().getSharedPreferences("Meusdados", Context.MODE_PRIVATE);
+        String id = sp.getString("id", "");
+
+
+
+
         adicionarbtn.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
-
                 Toast.makeText(Tela_principal.this, "Redirecionando", Toast.LENGTH_SHORT).show();
                 OpenLoginScreen();
                         //está só de teste mudar depois 1 pra cada e 1 função pra cada
