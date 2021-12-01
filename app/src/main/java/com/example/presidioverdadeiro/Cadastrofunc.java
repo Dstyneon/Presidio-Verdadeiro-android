@@ -49,6 +49,7 @@ public class Cadastrofunc extends AppCompatActivity {
 
                         Boolean checkid = DB.checkid(id_policial);
 
+
                         if (checkid == false) //Se o usuário ainda não existir
                         {
                             Boolean insetuserdata = DB.insetuserdata(id_policial, senha, email); //insere dados na tabela de usuarios
@@ -63,7 +64,7 @@ public class Cadastrofunc extends AppCompatActivity {
                             }
                         } else { //Se o usuário existir
 
-                            Toast.makeText(Cadastrofunc.this, "O usuário já existe, vá para a tela de login", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Cadastrofunc.this, "O usuário " + id_policial +" já existe, vá para a tela de login", Toast.LENGTH_SHORT).show();
 
                         }
                     }

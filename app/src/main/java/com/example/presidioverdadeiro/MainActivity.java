@@ -2,7 +2,9 @@ package com.example.presidioverdadeiro;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -13,6 +15,8 @@ import com.google.android.material.button.MaterialButton;
 public class MainActivity extends AppCompatActivity {
 
     private DBHelper DB;
+    SharedPreferences sp;
+    String idStr;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,25 +31,36 @@ public class MainActivity extends AppCompatActivity {
 
         DB = new DBHelper(this);
 
-        //admin e admin
+        sp = getSharedPreferences("Meusdados", Context.MODE_PRIVATE);
 
-        loginbtn.setOnClickListener(new View.OnClickListener() {
+
+        loginbtn.setOnClickListener(new View.OnClickListener() {               //Ao clicar no botão de login, chama a condição abaixo
             @Override
             public void onClick(View v) {
+
+
+
                 if (id.getText().toString().equals("") || password.getText().toString().equals("") ){ //se o campo id ou o campo senha estiverem em branco
 
                     Toast.makeText(MainActivity.this, "Por favor, preencha todos os campos",Toast.LENGTH_SHORT).show();
 
                 }
-                else{
+                else{ //se o campo id ou o campo senha não estiverem em branco
 
                     String id_policial = id.getText().toString();
                     String senha = password.getText().toString();
 
+
+                    SharedPreferences.Editor editor = sp.edit();
+
+                    editor.putString("id",id_policial);
+                    editor.commit();
+
+
                     Boolean checksenha = DB.checksenha(id_policial, senha);
 
                     if (checksenha == true) { //se o usuario e/ou a senha existirem
-                        Toast.makeText(MainActivity.this, "Bem vindo(a)", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, "Bem vindo(a) " + id_policial, Toast.LENGTH_SHORT).show();
                         AbrirHomeScreen();
                     }
                     else { //se o usuario e/ou a senha não existirem
@@ -58,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         });
+
 
         Cadastrar.setOnClickListener(new View.OnClickListener(){
             @Override

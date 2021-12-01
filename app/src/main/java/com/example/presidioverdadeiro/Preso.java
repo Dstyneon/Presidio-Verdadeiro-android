@@ -5,11 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.presidioverdadeiro.ui.main.MaskEditUtil;
 import com.google.android.material.button.MaterialButton;
 
 
@@ -25,14 +23,10 @@ public class Preso extends AppCompatActivity {
 
 
         TextView NomeD = (TextView) findViewById(R.id.NomeD);
-        EditText DataNasD = (EditText) findViewById(R.id.DataNasD);
-        EditText CpfD = (EditText) findViewById(R.id.CpfD);
+        TextView DataNasD = (TextView) findViewById(R.id.DataNasD);
+        TextView CpfD = (TextView) findViewById(R.id.CpfD);
         TextView FichaC = (TextView) findViewById(R.id.FichaC);
 
-        //EditText CpfDf = (EditText) findViewById(R.id.CpfD);
-
-        CpfD.addTextChangedListener(MaskEditUtil.mask(CpfD,MaskEditUtil.FORMAT_CPF));
-        DataNasD.addTextChangedListener(MaskEditUtil.mask(DataNasD,MaskEditUtil.FORMAT_DATE));
         MaterialButton CadastroDt= (MaterialButton) findViewById(R.id.CadastroDt);
 
         DB = new DBHelper(this);
@@ -51,6 +45,7 @@ public class Preso extends AppCompatActivity {
                     Toast.makeText(Preso.this, "Por favor preencha todos as caixas de texto!!!",Toast.LENGTH_SHORT).show();
                 }
                 else {
+
 
                     Boolean insertpresodata = DB.insertpresodata(nome,dtnasc,Cpf,Ficha);
 

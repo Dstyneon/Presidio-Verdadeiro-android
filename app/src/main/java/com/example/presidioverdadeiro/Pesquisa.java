@@ -10,7 +10,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.presidioverdadeiro.ui.main.MaskEditUtil;
 import com.google.android.material.button.MaterialButton;
 
 import java.util.zip.DataFormatException;
@@ -26,17 +25,8 @@ public class Pesquisa extends AppCompatActivity {
 
         MaterialButton VoltarP = (MaterialButton) findViewById(R.id.VoltarP);
         MaterialButton Pesquisarbtn = (MaterialButton) findViewById(R.id.btnpesquisar);
-        EditText DataNasD = (EditText) findViewById(R.id.DataNasD);
-        EditText CpfD = (EditText) findViewById(R.id.CpfD);
-        EditText Cpf = (EditText) findViewById(R.id.Pesquisar);
 
-        CpfD.addTextChangedListener(MaskEditUtil.mask(CpfD,MaskEditUtil.FORMAT_CPF));
-        DataNasD.addTextChangedListener(MaskEditUtil.mask(DataNasD,MaskEditUtil.FORMAT_DATE));
-        Cpf.addTextChangedListener(MaskEditUtil.mask(Cpf,MaskEditUtil.FORMAT_CPF));
-
-
-
-
+        TextView Cpf = (TextView) findViewById(R.id.Pesquisar);
 
         VoltarP.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,8 +58,6 @@ public class Pesquisa extends AppCompatActivity {
 
                     dados.moveToFirst();
 
-
-
                     EditText NomeD = (EditText) findViewById(R.id.NomeD);
                     NomeD.setText(dados.getString(1));
 
@@ -81,10 +69,6 @@ public class Pesquisa extends AppCompatActivity {
 
                     EditText FichaC = (EditText) findViewById(R.id.FichaC);
                     FichaC.setText(dados.getString(3));
-
-
-
-
                 }
 
             }
