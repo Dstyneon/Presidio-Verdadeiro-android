@@ -1,18 +1,22 @@
 package com.example.presidioverdadeiro;
 
 import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.content.SharedPreferences;
+
 
 import com.google.android.material.button.MaterialButton;
 
 public class MainActivity extends AppCompatActivity {
 
     private DBHelper DB;
+    SharedPreferences sp;
+    String idStr;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         MaterialButton Cadastrar = (MaterialButton) findViewById(R.id.cadastrar);
 
         DB = new DBHelper(this);
+        sp = getSharedPreferences("Meusdados", Context.MODE_PRIVATE);
 
         //admin e admin
 
@@ -41,6 +46,10 @@ public class MainActivity extends AppCompatActivity {
 
                     String id_policial = id.getText().toString();
                     String senha = password.getText().toString();
+
+                    SharedPreferences.Editor editor = sp.edit();
+                    editor.putString("id",id_policial);
+                    editor.commit();
 
                     Boolean checksenha = DB.checksenha(id_policial, senha);
 
